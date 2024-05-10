@@ -1,8 +1,12 @@
 <template>
+  <require from="./weather-card-view.css"></require>
   <require from="../icone-weather-card-view/icone-weather-card-view"></require>
+  <require from="../description-weather-card/description-weather-card"></require>
   <require from="../name-city-weather/name-city-weather"></require>
- <div>
- </div>
+<h1>Mes débuts avec Aurélia</h1>
+<div class="flex-c">
 <icone-weather-card-view img.bind="donneesApi.weather[0].icon"></icone-weather-card-view>
   <name-city-weather weather.bind="donneesApi.name"></name-city-weather>
+  <description-weather-card description.bind="donneesApi.weather[0].description"></description-weather-card>
+</div>
 </template>
