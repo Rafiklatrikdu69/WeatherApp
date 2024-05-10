@@ -3,10 +3,34 @@
   <require from="../icone-weather-card-view/icone-weather-card-view"></require>
   <require from="../description-weather-card/description-weather-card"></require>
   <require from="../name-city-weather/name-city-weather"></require>
-<h1>Mes débuts avec Aurélia</h1>
-<div class="flex-c">
-<icone-weather-card-view img.bind="donneesApi.weather[0].icon"></icone-weather-card-view>
-  <name-city-weather weather.bind="donneesApi.name"></name-city-weather>
-  <description-weather-card description.bind="donneesApi.weather[0].description"></description-weather-card>
+  <require from="../temperature-card/temperature-card"></require>
+  <h1>Mes débuts avec Aurélia</h1>
+  
+  
+  <form submit.trigger="handleLogin(email)">
+    <div>
+      <label for="email">Entrez le nom de la ville :</label>
+      <input id="email" type="text" value.bind="email">
+    </div>    
+    <button type="submit">Entrez</button>
+  </form>
+  
+  <div class="flex-c">
+    <icone-weather-card-view 
+    img.bind="donneesApi.weather[0].icon"
+    >
+  </icone-weather-card-view>
+  
+  <name-city-weather 
+  weather.bind="donneesApi.name"
+  ></name-city-weather>
+  
+  <description-weather-card 
+  description.bind="donneesApi.weather[0].description">
+</description-weather-card>
+
+<temperature-card
+temp.bind="donneesApi.main.temp"
+></temperature-card>
 </div>
 </template>
