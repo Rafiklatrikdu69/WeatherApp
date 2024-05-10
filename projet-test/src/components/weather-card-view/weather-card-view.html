@@ -1,0 +1,8 @@
+<template>
+  <require from="../icone-weather-card-view/icone-weather-card-view"></require>
+  <require from="../name-city-weather/name-city-weather"></require>
+ <div>
+ </div>
+<icone-weather-card-view img.bind="donneesApi.weather[0].icon"></icone-weather-card-view>
+  <name-city-weather weather.bind="donneesApi.name"></name-city-weather>
+</template>
